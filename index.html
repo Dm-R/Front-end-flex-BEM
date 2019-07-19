@@ -16,12 +16,8 @@
             <!-- header сайта с логотипом и полем поиска-->
             <div class="header page__header">
                 <!-- логотип -->
-                <div class="logo header__logo">
-                    <!-- рамка логотипа -->
-                    <div class="logo__border">
-                        <!-- надпись логотипа -->
-                        <p class="logo__label">SUPER LOGO</p>
-                    </div>
+                <div class="logo header__logo">                                                                                                                          
+                    <canvas id="canvas" width=180 height=46></canvas>   <!--Логотип-->                                                    
                 </div>
                 <!-- форма поиска -->
                 <div class="searchForm header__searchForm">
@@ -57,16 +53,20 @@
             </ul>
             <!-- Заглавное изображение-->
             <div class="main-img main-img_theme_nature">
-                <h1 class="main-img__header">Aliquam pharetra vulputate</h1>
-                <p class="main-img__text">
-                    Aliquam mattis condimentum nunc, at dictum est molestie in.
-                    In tellus sem, aliquam id ligula vitae, lacinia aliquet lorem.
-                    Donec accumsan aliquam est, vitae tempus leo venenatis nec.
-                    Integer a nulla rhoncus, finibus sapien ac, dignissim elit.
-                    Aliquam in dui ante. Phasellus et lectus ut eros porta
-                    hendrerit sit amet eget nisl.
-                </p>
-                <button class="btn">READ MORE</button>
+                <div class="main-img-description">
+                    <h1 class="main-img__header">Aliquam pharetra vulputate</h1>
+                    <p class="main-img__text">
+                        Aliquam mattis condimentum nunc, at dictum est molestie in.
+                        In tellus sem, aliquam id ligula vitae, lacinia aliquet lorem.
+                        Donec accumsan aliquam est, vitae tempus leo venenatis nec.
+                        Integer a nulla rhoncus, finibus sapien ac, dignissim elit.
+                        Aliquam in dui ante. Phasellus et lectus ut eros porta
+                        hendrerit sit amet eget nisl.
+                    </p>
+                    <button class="btn">READ MORE</button>
+                </div>
+                <!-- следующий элемент будет фоном -->
+                <div style="position:absolute; width: 100%; height: 100%" class="background-block"></div>
             </div>
             <!-- page-main контейнер содержит статьи сайта и блок с логотипами-->
             <div class="page-main">
@@ -258,5 +258,6 @@
             <p class="footer__label">Copyright &copy; Lodoss team 2018</p>
         </div>
     </div>
+    <script src="javaScript.js"></script>
 </body>
 </html>  

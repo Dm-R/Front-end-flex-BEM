@@ -31,25 +31,8 @@ html, body {
 }
 
 .header__logo {
-    width: 11em;
+    width: 180px;
     margin-bottom: 10px;
-}
-
-.logo__border {
-    box-sizing: border-box;
-    border: 4px solid #ffd800;
-    height: 2.8em;
-    padding: 7px 20px;
-    width: 2.8em;
-}
-
-.logo__label {
-    width: 7em;
-    font-size: 1.5em;
-    background-color: white;
-    font-weight: 700;
-    margin: 0;
-    line-height: 1em;
 }
 
 .btn {
@@ -91,15 +74,18 @@ html, body {
     padding: 15px;
     text-decoration: none;
     color: black;
+    transition: background-color .5s, color .5s;
 }
 
-    .nav__link:hover:not(.nav__link_active) {
-        background-color: #f2efef;
-    }
+.nav__link:hover:not(.nav__link_active) {
+    background-color: #f2efef;
+    color: #983af6;
+    font-weight: bold;
+}
 
-    .nav__link:hover {
-        background-color: #f5c749;
-    }
+.nav__link:hover {
+    background-color: #f5c749;
+}
 
 .nav__link_active {
     background-color: #ffd800;
@@ -108,13 +94,36 @@ html, body {
 }
 
 .main-img_theme_nature {
+    position: relative;
     box-sizing: border-box;
     width: 100%;
     padding: 2% 3%;
+   
+    margin-bottom: 20px;
+}
+.main-img-description {
+    position: relative;
+    z-index: 100;
+}
+.background-block {
     background: url(https://www.nastroy.net/pic/images/post/21617-1524175256.jpg) no-repeat center bottom;
+    animation: background 4s cubic-bezier(0.5, 0.5, 0.5, 1);
     background-size: cover;
     box-shadow: 0 0 0 17em rgba(0, 0, 0, 0.33) inset;
-    margin-bottom: 20px;
+    top: 0;
+    left: 0;
+}
+@keyframes background {
+    0% {
+        background: url(https://www.nastroy.net/pic/images/post/21617-1524175256.jpg) no-repeat center top;
+        background-size: cover;
+        opacity: 0.4;
+    }
+    100% {
+        background: url(https://www.nastroy.net/pic/images/post/21617-1524175256.jpg) no-repeat center bottom;
+        background-size: cover;
+        opacity: 1;
+    }
 }
 
 .main-img__header {
@@ -125,8 +134,17 @@ html, body {
     font-size: 5em;
     font-weight: 400;
     line-height: 1.1em;
+    animation: changeColor 4s cubic-bezier(0.5, 0.5, 0.5, 1);
 }
 
+@keyframes changeColor {
+    0% {
+        color: #f6a806;
+    }
+    100% {
+        color: #f5c749;
+    }
+}
 .main-img__text {
     margin: 0;
     margin-bottom: 10px;
@@ -305,8 +323,11 @@ html, body {
 
     .main-img__header {
         font-size: 3em;
+        width: 80%;
     }
-
+    .main-img__text {
+        width: 80%;
+    }
     .article {
         flex: 0 1 96%;
         padding-bottom: 5px;
@@ -326,6 +347,11 @@ html, body {
 
     .main-img__header {
         font-size: 2em;
+        width: 100%;
+    }
+
+    .main-img__text {
+        width: 100%;
     }
 }
 
@@ -371,13 +397,13 @@ html, body {
     }
 
     .logo__border {
-        height: 2em;
-        width: 2em;
+        height: 32px;
+        width: 32px;
         padding: 4px 10px;
     }
 
     .logo__label {
-        font-size: 1em;
+        font-size: 16px;
     }
 
     .searchForm__searchField {
