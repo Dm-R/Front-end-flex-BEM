@@ -80,7 +80,6 @@ html, body {
 .nav__link:hover:not(.nav__link_active) {
     background-color: #f2efef;
     color: #983af6;
-    font-weight: bold;
 }
 
 .nav__link:hover {
