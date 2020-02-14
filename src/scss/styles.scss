@@ -1,0 +1,143 @@
+@import "variables/fonts.scss";
+@import "variables/colors.scss";
+@import "mixins.scss";
+@import "variables/others.scss";
+
+
+
+html, body {
+    @include indents(0, 0);
+    font-family: $main-font;
+    #{$lh}: 1em;
+    height: 100%;
+}
+.header {
+    @include flexible ($wrap: wrap);
+    &__logo {
+        width: 11em;
+        margin-bottom: 10px;
+    }
+}
+.logo {
+    &__border {
+        box-sizing: border-box;
+        border: 4px solid $logo-color;
+        height: 2.8em;
+        padding: 7px 20px;
+        width: 2.8em;
+        @media (max-width: 220px) {
+            height: 2em;
+            width: 2em;
+            padding: 4px 10px;
+        }
+    }
+    &__label {
+        width: 7em;
+        font-size: 1.5em;
+        #{$bkg}-color: white;
+        #{$fw}: 700;
+        margin: 0;
+        #{$lh}: 1em;
+        @media (max-width: 220px) {
+            font-size: 1em;
+        }
+    }
+}
+.btn {
+    #{$bkg}-color: $main-color;
+    border: none;
+    padding: 10px;
+    color: white;
+}
+.searchForm {
+    &__searchField, &__btn-go {
+        height: 1.6em;
+        margin-top: 1.2em;
+    }
+    &__btn-go {
+        padding: .3em;
+    }
+    &__searchField {
+        @media (max-width: 220px) {
+            width: 65%;
+        }
+    }
+}
+.nav {
+    padding: 0;
+    @include flexible ($wrap: wrap);
+    list-style: none;
+    &__menu {
+        margin: 0;
+        margin-bottom: 20px;
+    }
+    &__item {
+        flex-grow: 1;
+        text-align: center;
+    };
+    &__link {
+        display: block;
+        text-align: center;
+        padding: 15px;
+        text-decoration: none;
+        color: $link-color;
+        &:hover {
+            #{$bkg}-color: $link-hover;
+        }
+        &:hover:not(&_active) {
+            #{$bkg}-color: $link-active-hover;
+        }
+        &_active {
+            #{$bkg}-color: $link-active;
+            color: $link-active-text;
+            #{$fw}: $link-active-fw;
+        }
+    }
+}
+
+.description {
+    &__title {
+        margin: 0 0 5px 0;
+    }
+    &__text {
+        margin: 0;
+        text-align: justify;
+    }
+    &__badge {
+        margin-top: 10px;
+    }
+    &__link {
+        color: black;
+        margin-top: 10px;
+    }
+}
+.logos-block {
+    @include flexible(row, $wrap: wrap);
+    align-items: center;
+    @media (max-width: 500px) {
+        justify-content: center;
+        margin-bottom: 15px;
+    }
+    &__img {
+        width: 15%;
+        @media (max-width: 500px) {
+            margin: auto;
+            flex: 0 1 30%;
+        }
+    }
+}
+.footer {
+    flex: 0 1 100%;
+    #{$bkg}-color: $main-color;
+    color: $footer-bkg;
+    @include flexible (row, center);
+    align-items: center;
+    text-align: center;
+    &__label {
+        font-weight: 700;
+        margin: 50px auto;
+    }
+}
+
+
+
