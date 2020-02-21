@@ -5,6 +5,7 @@
 
 
 
+
 html, body {
     @include indents(0, 0);
     font-family: $main-font;
@@ -114,9 +115,13 @@ html, body {
 .logos-block {
     @include flexible(row, $wrap: wrap);
     align-items: center;
+    min-height: 160px;
+    @media (max-width: 1000px) {
+        min-height: 100px;
+    }
     @media (max-width: 500px) {
+        min-height: 80px;
         justify-content: center;
-        margin-bottom: 15px;
     }
     &__img {
         width: 15%;
@@ -127,6 +132,7 @@ html, body {
     }
 }
 .footer {
+    margin-top: 10px;
     flex: 0 1 100%;
     #{$bkg}-color: $main-color;
     color: $footer-bkg;

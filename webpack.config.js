@@ -14,21 +14,46 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.js$/,
-        include: path.resolve(__dirname, 'src/scss'),
-        
+        test: /\.js$/,        
         use: {
-          loader: "babel-loader"
+          loader: "babel-loader",
+          options: {
+            presets: ['@babel/preset-env']
+          }
         }
       },
       {
         test: /\.scss$/,
-          use: [
+          use: ['css-hot-loader',
             {
               loader: MiniCssExtractPlugin.loader,
+              options: {
+                hmr: process.env.NODE_ENV === 'development',
+                reloadAll: true
+              }
             },
             "css-loader",
             "sass-loader"
+        ]
+      },
+      {
+        test: /\.(jpg|png)$/,
+        use: [
+              {
+                loader: "file-loader",
+                options: {
+                  name: "img/[name].[ext]",
+                }
+            },
+            {
+              loader: "image-webpack-loader",
+              options: {
+                mozjpeg: {
+                  progressive: true,
+                  quality: 70
+                }
+              }
+            }
         ]
       }
     ]
@@ -43,6 +68,9 @@ module.exports = {
     }),
   ],
   devServer: {
+    before(app, server) {
+      server._watch(`src/index.html`);
+    },
     contentBase: './dist',
     port: 1111,
     hot: true
