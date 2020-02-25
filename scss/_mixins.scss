@@ -1,0 +1,12 @@
+@mixin indents ($margin: 0, $padding: 0) {
+    margin: $margin;
+    padding: $padding;
+}
+@mixin flexible ($direction: row, $jContent: space-between, $wrap: false) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $jContent;
+    @if($wrap) {
+        flex-wrap: $wrap;
+    }
+}
