@@ -1,0 +1,270 @@
+﻿<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!--<link rel="stylesheet" type="text/css" href="styles.css" />-->
+    <title>Task-1_Flexbox_&_BEM</title>
+    <link href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" rel="stylesheet">
+</head>
+<body>
+    <!-- page-контейнер прижимает footer к нижней части страницы, независимо от количества контента, так как у него установлена 
+         минимальная высота равная высоте окна браузера, а так же установленны свойства display: flex; flex-direction: column; justify-content: space-between,
+         далее в нем будут созданы два flex-элемента page__conten и footer, которые будут прижаты к верхней и нижней его частям соответственно -->
+    <div class="page">
+        <!-- блок page__content - первый элемент блока page. Cодержит всю информацию страницы (кроме блока footer)-->
+        <div class="page__content">
+            <!-- header сайта с логотипом и полем поиска-->
+            <div class="header page__header">
+                <!-- логотип -->
+                <div class="logo header__logo">
+                    <!-- рамка логотипа -->
+                    <div class="logo__border">
+                        <!-- надпись логотипа -->
+                        <p class="logo__label">SUPER LOGO</p>
+                    </div>
+                </div>
+                <!-- форма поиска -->
+                <div class="searchForm header__searchForm">
+                    <input class="searchForm__searchField" type="search" name="search" /><button class="btn searchForm__btn-go" type="submit">GO</button>
+                </div>
+            </div>
+            <!-- меню сайта-->
+            <ul class="nav nav_menu">
+                <li class="nav__item">
+                    <a class="nav__link nav__link_active" href="#">HOME</a>
+                </li>
+                <li class="nav__item" href="#">
+                    <a class="nav__link" href="#">ABOUT US</a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link" href="#">SERVICE</a>
+                </li>
+                <li class="nav__item ">
+                    <a class="nav__link" href="#">PARTNERS</a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link" href="#">CUSTOMERS</a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link" href="#">PROJECTS</a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link" href="#">CAREERS</a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link" href="#">CONTACT</a>
+                </li>
+            </ul>
+            <!-- Заглавное изображение-->
+            <div id="slide-container" >
+                <div id="slide-content" >
+                    <div id="slide1" class="slide" >
+                        <h1>Work As A Team</h1>
+                        <!--<img src="https://www.gannett-cdn.com/presto/2018/08/17/PDTF/dbbad102-23d5-45a6-9356-13963c2948d7-GettyImages-639467826.jpg?crop=723,407,x1,y76&width=3200&height=1680&fit=bounds">-->
+                    </div >
+                    <div id="slide2" class="slide hidden" >
+                        <h1>Manage Your Own Business</h1>
+                    </div >
+                    <div id="slide3" class="slide hidden" >
+                        <h1>Work From Anywhere In The World</h1>
+                    </div >
+                    <span id="next" > <i class="btn-slide fa fa-chevron-right fa-2x" aria-hidden="true" > </i > </span >
+                    <span id="prev" > <i class="btn-slide fa fa-chevron-left fa-2x" aria-hidden="true" > </i > </span >
+                    <div id="indicator1" class="indicator" > </div >
+                    <div id="indicator2" class="indicator" > </div >
+                    <div id="indicator3" class="indicator" > </div >
+                </div >
+            </div >
+            <!-- page-main контейнер содержит статьи сайта и блок с логотипами-->
+            <div class="page-main">
+                <!-- статья -->
+                <div class="article article_size_big">
+                    <!-- Заголовок статьи -->
+                    <div class="article__header article__header_violet">
+                        <span class="article__title">ABOUT SUPER LOGO</span>
+                    </div>
+                    <!-- блок контента статьи имеет свойства display: flex и flex-wrap: wrap, для изменения расположения внутренних элементов при масштабировании-->
+                    <div class="article__main">
+                        <!-- внешний контейнер для картинки, чтобы картинка имела правильное соотношение сторон(отсутствие растяжения/сжимания)-->
+                        <div class="article__img-wrapper">
+                            <img class="article__img" src="http://www.mypetez.com/wp-content/uploads/2016/12/petter-head.jpg" />
+                        </div>
+                        <!-- блок с текстом и нижним колонтитулом-->
+                        <div class="description article__description">
+                            <!-- текст -->
+                            <p class="description__text">
+                                Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                                when an unknown printer took a galley of type and scrambled it to make a type
+                                specimen book.
+                            </p>
+                            <!-- ссылка -->
+                            <a class="description__link" href="#">Read more</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- статья -->
+                <div class="article article_size_big">
+                    <div class="article__header article__header_yellow">
+                        <span class="article__title">SOME WORDS OUR CEO</span>
+                    </div>
+                    <div class="article__main">
+                        <div class="article__img-wrapper">
+                            <img class="article__img" src="http://hopop.ru/wp-content/uploads/2018/07/imgonline-com-ua-resize-vmlfywq7nvdikab4-150x150.jpg" />
+                        </div>
+                        <div class="description article__description">
+                            <p class="description__text">
+                                Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                                when an unknown printer took a galley of type and scrambled it to make a type
+                                specimen book.
+                            </p>
+                            <span class="description__badge">Steve Jobs, CEO</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- статья -->
+                <div class="article article_size_big">
+                    <div class="article__header article__header_yellow">
+                        <span class="article__title">ABOUT SUPER LOGO</span>
+                    </div>
+                    <div class="article__main">
+                        <div class="article__img-wrapper">
+                            <img class="article__img" src="https://i.pinimg.com/originals/6b/5b/dd/6b5bdd7aa09fc0b22f6678695b27eefb.jpg" />
+                        </div>
+                        <div class="description article__description">
+                            <p class="description__text">
+                                Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                                when an unknown printer took a galley of type and scrambled it to make a type
+                                specimen book.
+                            </p>
+                            <a class="description__link" href="#">Read more</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- статья -->
+                <div class="article article article_size_big">
+                    <div class="article__header article__header_violet">
+                        <span class="article__title">SOME WORDS OUR CEO</span>
+                    </div>
+                    <div class="article__main">
+                        <div class="article__img-wrapper">
+                            <img class="article__img" src="https://vk.vkfaces.com/637620/v637620001/4aa12/djOJ8qiNwlE.jpg" />
+                        </div>
+                        <div class="description article__description">
+                            <p class="description__text">
+                                Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                                when an unknown printer took a galley of type and scrambled it to make a type
+                                specimen book.
+                            </p>
+                            <span class="description__badge">Steve Jobs, CEO</span>
+                        </div>
+                    </div>
+                </div>
+                <!--далее следуют три статьи меньшего размера (article_size_small) вторая из которых содержит три подстатьи -->
+                <div class="article article_size_small">
+                    <!-- заголовок статьи -->
+                    <div class="article__header article__header_yellow">
+                        <span class="article__title">SERVICES</span>
+                    </div>
+                    <!-- описание статьи -->
+                    <div class="description article__description article__description_width_100">
+                        <!-- текст описания -->
+                        <p class="description__text">
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                            when an unknown printer took a galley of type and scrambled it to make a type
+                            specimen book.
+                        </p>
+                        <!-- ссылка описания -->
+                        <a class="description__link" href="#">Read more</a>
+                    </div>
+                </div>
+                <!-- статья с вложенными тремя статьями -->
+                <div class="article article_size_small">
+                    <!-- заголовок статьи -->
+                    <div class="article__header article__header_violet">
+                        <span class="article__title">RESENT POSTS</span>
+                    </div>
+                    <!-- первая подстатья -->
+                    <div class="article__main article__main_size_small">
+                        <!-- заголовок подстатьи -->
+                        <div class="article__img-wrapper article__img-wrapper_size_small">
+                            <img class="article__img article__img_outline_none" src="https://src.img.photos/2019/04/23/rtB5f.th.jpg" />
+                        </div>
+                        <!-- описание подстатьи  -->
+                        <div class="description article__description article__description_size_small">
+                            <!-- заголовок описания статьи -->
+                            <p class="description__title">LOREM IPSUM</p>
+                            <!-- текст статьи -->
+                            <p class="description__text">
+                                Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                            </p>
+                        </div>
+                    </div>
+                    <!-- вторая подстатья -->
+                    <div class="article__main article__main_size_small">
+                        <div class="article__img-wrapper article__img-wrapper_size_small">
+                            <img class="article__img article__img_outline_none" src="https://im0-tub-ru.yandex.net/i?id=a7536249cd5dfa134c8a3b404f02d16c&n=13&exp=1" />
+                        </div>
+                        <div class="description article__description article__description_size_small">
+                            <p class="description__title">LOREM IPSUM</p>
+                            <p class="description__text">
+                                Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                            </p>
+                        </div>
+                    </div>
+                    <!-- третья подстатья -->
+                    <div class="article__main article__main_size_small">
+                        <div class="article__img-wrapper article__img-wrapper_size_small">
+                            <img class="article__img article__img_outline_none" src="https://im0-tub-ru.yandex.net/i?id=bb3883f5bfb9618841144bc8ecb9e755&n=13" />
+                        </div>
+                        <div class="description article__description article__description_size_small">
+                            <p class="description__title">LOREM IPSUM</p>
+                            <p class="description__text">
+                                Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="article article_size_small">
+                        <div class="article__header article__header_yellow">
+                            <span class="article__title">SERVICES</span>
+                        </div>
+                        <div class="description article__description article__description_width_100">
+                            <p class="description__text">
+                                Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                                when an unknown printer took a galley of type and scrambled it to make a type
+                                specimen book.
+                            </p>
+                            <a class="description__link" href="#">Read more</a>
+                        </div>
+                </div>
+                <!-- статья-блок с логотипами web-технологий -->
+                <div class="article article_theme_clents">
+                    <div class="article__header article__header_violet">
+                        <span class="article__title">CLENTS</span>
+                    </div>
+                    <!-- блок для выравнивания логотипов по высоте и дальнейшего перераспределения при масштабировании-->
+                    <div class="logos-block">
+                        <!-- логотипы -->
+                        <img class="logos-block__img" src="https://prdxn.com/wp-content/uploads/2019/08/sass-1.png" />
+                        <img class="logos-block__img" src="https://www.marketingportaal.nl/wp-content/uploads/2018/07/html_5_1531402524.png" />
+                        <img class="logos-block__img" src="https://i.pinimg.com/originals/c4/37/2b/c4372b697dab5b2a07d16c0a73a13b2a.png" />
+                        <img class="logos-block__img" src="https://melarossa.by/images/slider-inner-pages/javascript/javascript-perebivka.jpg" />
+                        <img class="logos-block__img" src="https://im0-tub-ru.yandex.net/i?id=032c37f0fc0ed964d35a900faefe692a&n=13" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- footer сайта. Второй элемент блока page -->
+        <div class="footer">
+            <p class="footer__label">Copyright &copy; Lodoss team 2018</p>
+        </div>
+    </div>
+</body>
+</html>  
