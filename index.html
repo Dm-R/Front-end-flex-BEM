@@ -3,7 +3,8 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" type="text/css" href="styles.css" />
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">.
     <title>Task-1_Flexbox_&_BEM</title>
 </head>
 <body>
@@ -16,12 +17,8 @@
             <!-- header сайта с логотипом и полем поиска-->
             <div class="header page__header">
                 <!-- логотип -->
-                <div class="logo header__logo">
-                    <!-- рамка логотипа -->
-                    <div class="logo__border">
-                        <!-- надпись логотипа -->
-                        <p class="logo__label">SUPER LOGO</p>
-                    </div>
+                <div class="logo header__logo">                                                                                                                          
+                    <canvas id="canvas" width=180 height=46></canvas>   <!--Логотип-->                                                    
                 </div>
                 <!-- форма поиска -->
                 <div class="searchForm header__searchForm">
@@ -57,16 +54,20 @@
             </ul>
             <!-- Заглавное изображение-->
             <div class="main-img main-img_theme_nature">
-                <h1 class="main-img__header">Aliquam pharetra vulputate</h1>
-                <p class="main-img__text">
-                    Aliquam mattis condimentum nunc, at dictum est molestie in.
-                    In tellus sem, aliquam id ligula vitae, lacinia aliquet lorem.
-                    Donec accumsan aliquam est, vitae tempus leo venenatis nec.
-                    Integer a nulla rhoncus, finibus sapien ac, dignissim elit.
-                    Aliquam in dui ante. Phasellus et lectus ut eros porta
-                    hendrerit sit amet eget nisl.
-                </p>
-                <button class="btn">READ MORE</button>
+                <div class="main-img-description">
+                    <h1 class="main-img__header">Aliquam pharetra vulputate</h1>
+                    <p class="main-img__text">
+                        Aliquam mattis condimentum nunc, at dictum est molestie in.
+                        In tellus sem, aliquam id ligula vitae, lacinia aliquet lorem.
+                        Donec accumsan aliquam est, vitae tempus leo venenatis nec.
+                        Integer a nulla rhoncus, finibus sapien ac, dignissim elit.
+                        Aliquam in dui ante. Phasellus et lectus ut eros porta
+                        hendrerit sit amet eget nisl.
+                    </p>
+                    <button class="btn">READ MORE</button>
+                </div>
+                <!-- следующий элемент будет фоном -->
+                <div style="position:absolute; width: 100%; height: 100%" class="background-block"></div>
             </div>
             <!-- page-main контейнер содержит статьи сайта и блок с логотипами-->
             <div class="page-main">
@@ -223,18 +224,63 @@
                     </div>
                 </div>
                 <div class="article article_size_small">
-                        <div class="article__header article__header_yellow">
-                            <span class="article__title">SERVICES</span>
+                    <div class="article__header article__header_yellow">
+                        <span class="article__title">SERVICES</span>
+                    </div>
+                    <div class="description article__description article__description_width_100">
+                        <p class="description__text">
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                            when an unknown printer took a galley of type and scrambled it to make a type
+                            specimen book.
+                        </p>
+                        <a class="description__link" href="#">Read more</a>
+                    </div>
+                </div>
+                <!-- Статья-блок с видео и аудио -->
+                <div class="article article_theme_media">
+                    <div class="article__header article__header_violet">
+                        <span class="article__title">MEDIA CONTENT</span>
+                    </div>
+                    <!-- Блок содержащий меню и область просмотра -->
+                    <div class="article__main article__main_theme_player">
+                        <!-- Меню -->
+                        <div class="media-menu">
+                            <!-- Пункт меню -->
+                            <div class="media-menu__item">
+                                <!-- Метка для радио-переключателя -->
+                                <label class="media-menu__lable-for-radio" for="watch"><i class="fa fa-youtube fa-lg"></i>  VIDEO</label>
+                                <!-- Радио-переключатель -->
+                                <input class="media-menu__radio" id="watch" type="radio" name="radio" checked />
+                                <!-- Блок со скрывающимся содержимым -->
+                                <div class="media-menu__media-block">
+                                    <!-- Разделитель -->
+                                    <div class="media-menu__divider"></div>
+                                    <!-- Ссылки -->
+                                    <a class="media-menu__media-link" href="https://www.youtube.com/embed/mzPxo7Y6JyA" target="media"><i class="fa fa-youtube-play"></i>  What is HTML?</a>
+                                    <a class="media-menu__media-link" href="https://www.youtube.com/embed/6d_4sd_l7rQ" target="media"><i class="fa fa-youtube-play"></i>  What is CSS?</a>
+                                    <a class="media-menu__media-link" href="https://www.youtube.com/embed/FR4QIeZaPeM" target="media"><i class="fa fa-youtube-play"></i>  What is Data?</a>
+                                    <a class="media-menu__media-link" href="https://www.youtube.com/embed/3VJItso0MsM" target="media"><i class="fa fa-youtube-play"></i>  Front-End</a>
+                                    <a class="media-menu__media-link" href="https://www.youtube.com/embed/4r6WdaY3SOA" target="media"><i class="fa fa-youtube-play"></i>  Back-End</a>
+                                </div>
+                            </div>
+                            <!-- Аналогичный предыдущему пункт меню только с аудио -->
+                            <div class="media-menu__item">
+                                <label class="media-menu__lable-for-radio" for="listen"><i class="fa fa-volume-up fa-lg"></i>  AUDIO</label>
+                                <input class="media-menu__radio" id="listen" type="radio" name="radio" />
+                                <div class="media-menu__media-block">
+                                    <div class="media-menu__divider"></div>
+                                    <a class="media-menu__media-link" href="HTML5.mp3" target="media"><i class="fa fa-music"></i>  What is HTML?</a>
+                                    <a class="media-menu__media-link" href="CSS.mp3" target="media"><i class="fa fa-music"></i>  What is CSS?</a>
+                                    <a class="media-menu__media-link" href="Database.mp3" target="media"><i class="fa fa-music"></i>  What is Data?</a>
+                                    <a class="media-menu__media-link" href="Frontend.mp3" target="media"><i class="fa fa-music"></i>  Front-End</a>
+                                    <a class="media-menu__media-link" href="Backend.mp3" target="media"><i class="fa fa-music"></i>  Back-End</a>
+                                </div>
+                            </div>
                         </div>
-                        <div class="description article__description article__description_width_100">
-                            <p class="description__text">
-                                Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-                                when an unknown printer took a galley of type and scrambled it to make a type
-                                specimen book.
-                            </p>
-                            <a class="description__link" href="#">Read more</a>
-                        </div>
+                        <!-- Область просмотра -->
+                        <iframe class="article__viewing-area"  name="media" width="500" height="400" src="https://www.youtube.com/embed/mzPxo7Y6JyA" seamless></iframe>
+                    </div>
                 </div>
                 <!-- статья-блок с логотипами web-технологий -->
                 <div class="article article_theme_clents">
@@ -258,5 +304,6 @@
             <p class="footer__label">Copyright &copy; Lodoss team 2018</p>
         </div>
     </div>
+    <script src="javaScript.js"></script>
 </body>
 </html>  
