@@ -2,6 +2,7 @@ language: node_js
 
 node_js: 
   - node
+
 install:
   - npm ci
 
@@ -13,6 +14,6 @@ branches:
   only:
     - ci
 
-  notification:
-    email:
-      - rikovdmitri39@gmail.com
+notification:
+  email:
+    - rikovdmitri39@gmail.com
