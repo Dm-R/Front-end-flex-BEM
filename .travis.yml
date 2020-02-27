@@ -13,6 +13,7 @@ script:
 branches:
   only:
     - ci
+    - master
 
 notification:
   email:
