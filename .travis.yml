@@ -10,10 +10,6 @@ script:
   - npm run lint
   - npm run webpack
 
-branches:
-  only:
-    - ci
-
 notification:
   email:
     - rikovdmitri39@gmail.com
