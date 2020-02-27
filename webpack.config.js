@@ -69,6 +69,7 @@ module.exports = {
   ],
   devServer: {
     before(app, server) {
+      // eslint-disable-next-line no-underscore-dangle
       server._watch(`src/index.html`);
     },
     contentBase: './dist',
