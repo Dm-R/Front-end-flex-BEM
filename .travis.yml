@@ -1,0 +1,12 @@
+language: node_js
+
+node_js: 
+  - node_js
+install:
+  - npm ci
+
+script:
+  npm run lint
+
+  notification:
+    email: false
