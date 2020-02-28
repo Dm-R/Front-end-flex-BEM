@@ -8,11 +8,13 @@ install:
 
 script:
   - npm run lint
-  - npm run webpack
 
 branches:
   only:
     - ci
+
+before_deploy:
+  - npm run webpack
 
 deploy:
   provider: pages
