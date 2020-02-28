@@ -14,6 +14,16 @@ branches:
   only:
     - ci
 
+deploy:
+  provider: pages
+  github-token: $gh-pages
+  skip-cleanup: true
+  keep-history: true
+  local-dir: dist
+  target-branch: ci
+  on:
+    branch: ci
+
 notification:
   email:
     - rikovdmitri39@gmail.com
