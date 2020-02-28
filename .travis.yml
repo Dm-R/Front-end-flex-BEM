@@ -12,6 +12,7 @@ script:
 
 branches:
   only:
+    - gh-pages
     - ci
 
 deploy:
