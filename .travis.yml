@@ -16,7 +16,7 @@ branches:
 
 deploy:
   provider: pages
-  github-token: $gh-pages
+  github-token: $GITHUB_TOKEN
   skip-cleanup: true
   keep-history: true
   local-dir: dist
