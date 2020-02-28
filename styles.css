@@ -38,7 +38,7 @@ html, body {
       font-size: 1em; } }
 
 .btn {
-  background-color: #ec4d13;
+  background-color: #983af6;
   border: none;
   padding: 10px;
   color: white; }
@@ -120,7 +120,7 @@ html, body {
 .footer {
   margin-top: 10px;
   flex: 0 1 100%;
-  background-color: #ec4d13;
+  background-color: #983af6;
   color: white;
   display: flex;
   flex-direction: row;
@@ -172,7 +172,7 @@ html, body {
   justify-content: space-between;
   box-sizing: border-box;
   padding-top: 20px;
-  border-top: 4px solid #ec4d13;
+  border-top: 4px solid #983af6;
   min-height: 100%; }
   .page__content {
     margin: 0 auto; }
@@ -227,7 +227,7 @@ html, body {
     margin: 0 0 20px 0;
     padding: 0 15px; }
     .article__header_violet {
-      background-color: #ec4d13; }
+      background-color: #983af6; }
     .article__header_yellow {
       background-color: #fbd938; }
   .article__title {
@@ -349,7 +349,7 @@ html, body {
   background: url("https://www.gannett-cdn.com/presto/2018/08/17/PDTF/dbbad102-23d5-45a6-9356-13963c2948d7-GettyImages-639467826.jpg?crop=723,407,x1,y76&width=3200&height=1680&fit=bounds") no-repeat top;
   background-size: cover; }
   #slide1 h1 {
-    color: #ec4d13; }
+    color: #983af6; }
 
 #slide2 {
   background: url("https://www.theladders.com/wp-content/uploads/businesswoman_190403.jpg") no-repeat top;
