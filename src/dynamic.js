@@ -3,31 +3,38 @@ class RequestManager {
         this.request = null;
     }
     makeRequest () {
-        const REQUEST = false;
+        let request = false;
         if (window.XMLHttpRequest) {
-            REQUEST = new XMLHttpRequest();
+            request = new XMLHttpRequest();
+            console.log(request.status);
         } else if (window.ActiveXObject) {
             try {
-                REQUEST = new ActiveXObject("Microsoft.XMLHTTP");
+                request = new ActiveXObject("Microsoft.XMLHTTP");
             }
             catch (exp) {
-                REQUEST = new ActiveXObject("Msxm12.XMLHTTP");
+                request = new ActiveXObject("Msxm12.XMLHTTP");
             }
         }
-        this.request = REQUEST;
+        this.request = request;
     }
-    sendRequest (type, url, data = false, handler) {
+    sendRequest (type, url, data, handler) {
         this.makeRequest();
         if (!this.request) {
             this.showNotification(`Can not make the request: ${url}`);
             return false;
         }
         if (type.toLowerCase() === 'get' && data) {
+            console.log(this.request.status);
             url += this.handleData(data);
             this.request.open('GET', url, true);
-            this.request.onreadystatechange = () => {
+            console.log(url);
+            console.log(this.request.status);
+            this.request.send();
+            this.request.onload = () => {
                 if (this.request.readyState === 4) {
+                    console.log(this.request.status);
                     if (this.request.status === 200) {
+                        console.log(this.request.status);
                         handler(this.request);
                     } else {
                         this.showNotification(`ERROR: ${this.request.statusText}`);
@@ -39,6 +46,7 @@ class RequestManager {
             this.request.open("POST", url);
             this.request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
             this.request.onreadystatechange = () => {
+                console.log(this.request.status);
                 if (this.request.readyState === 4) {
                     if (this.request.status === 200) {
                         handler(this.request);
@@ -47,6 +55,7 @@ class RequestManager {
                     }
                 }
             }
+            this.request.send(data);
         }
     }
     showNotification (message) {
@@ -64,8 +73,9 @@ class RequestManager {
         } else if (typeof data === 'object') {
             let formedData = '?';
             for (let prop in data) {
-                formedData += '&' + prop + '=' + data[prop];
+                formedData += '&' + prop + '=' + encodeURIComponent(data[prop]);
             }
+            console.log(formedData.replace('&', ''));
             return formedData.replace('&', '');
         }
 
@@ -74,11 +84,12 @@ class RequestManager {
 
  let data = {
     type:'meat-and-filler',
-    'start-with-lorem':'1',
-    paras:'3'
+    paras:'4'
  }
 
- const reqMng = new RequestManaget();
+ const reqMng = new RequestManager();
 
- reqMng.sendRequest('GET', 'https://baconipsum.com/json-api/', data, (request, co))
+ reqMng.sendRequest('GET', 'https://picsum.photos/200/300', data, (request) => {
+    document.write(request.response);
+ });
 
