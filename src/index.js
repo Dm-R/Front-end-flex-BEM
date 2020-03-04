@@ -3,7 +3,7 @@ import './scss/fragments/main-img.scss';
 import './scss/fragments/page.scss';
 import './scss/fragments/article.scss';
 import './scss/fragments/slider.scss';
-import './dynamic.js';
+import './dynamic';
 
 // Воспользуемся замыканием, чтобы всегда иметь доступ к номеру текущего слайда
 // код вне функции не сможет ее переопределить
