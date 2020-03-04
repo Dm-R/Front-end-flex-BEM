@@ -91,7 +91,7 @@ class RequestManager {
 
 const data = {
   type: 'meat-and-filler',
-  paras: '8',
+  paras: 8,
 };
 
 const reqMng = new RequestManager();

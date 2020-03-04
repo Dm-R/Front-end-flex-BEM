@@ -23,10 +23,6 @@ module.exports = {
         },
       },
       {
-        test: /index\.mustache$/,
-        loader: 'mustache-loader',
-      },
-      {
         test: /\.scss$/,
         use: ['css-hot-loader',
           {
