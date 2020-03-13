@@ -78,92 +78,7 @@
             </div >
             <!-- page-main контейнер содержит статьи сайта и блок с логотипами-->
             <div class="page-main">
-                <!-- статья -->
-                <div class="article article_size_big">
-                    <!-- Заголовок статьи -->
-                    <div class="article__header article__header_violet">
-                        <span class="article__title">ABOUT SUPER LOGO</span>
-                    </div>
-                    <!-- блок контента статьи имеет свойства display: flex и flex-wrap: wrap, для изменения расположения внутренних элементов при масштабировании-->
-                    <div class="article__main">
-                        <!-- внешний контейнер для картинки, чтобы картинка имела правильное соотношение сторон(отсутствие растяжения/сжимания)-->
-                        <div class="article__img-wrapper">
-                            <img class="article__img" src="http://www.mypetez.com/wp-content/uploads/2016/12/petter-head.jpg" />
-                        </div>
-                        <!-- блок с текстом и нижним колонтитулом-->
-                        <div class="description article__description">
-                            <!-- текст -->
-                            <p class="description__text">
-                                Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-                                when an unknown printer took a galley of type and scrambled it to make a type
-                                specimen book.
-                            </p>
-                            <!-- ссылка -->
-                            <a class="description__link" href="#">Read more</a>
-                        </div>
-                    </div>
-                </div>
-                <!-- статья -->
-                <div class="article article_size_big">
-                    <div class="article__header article__header_yellow">
-                        <span class="article__title">SOME WORDS OUR CEO</span>
-                    </div>
-                    <div class="article__main">
-                        <div class="article__img-wrapper">
-                            <img class="article__img" src="http://hopop.ru/wp-content/uploads/2018/07/imgonline-com-ua-resize-vmlfywq7nvdikab4-150x150.jpg" />
-                        </div>
-                        <div class="description article__description">
-                            <p class="description__text">
-                                Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-                                when an unknown printer took a galley of type and scrambled it to make a type
-                                specimen book.
-                            </p>
-                            <span class="description__badge">Steve Jobs, CEO</span>
-                        </div>
-                    </div>
-                </div>
-                <!-- статья -->
-                <div class="article article_size_big">
-                    <div class="article__header article__header_yellow">
-                        <span class="article__title">ABOUT SUPER LOGO</span>
-                    </div>
-                    <div class="article__main">
-                        <div class="article__img-wrapper">
-                            <img class="article__img" src="https://i.pinimg.com/originals/6b/5b/dd/6b5bdd7aa09fc0b22f6678695b27eefb.jpg" />
-                        </div>
-                        <div class="description article__description">
-                            <p class="description__text">
-                                Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-                                when an unknown printer took a galley of type and scrambled it to make a type
-                                specimen book.
-                            </p>
-                            <a class="description__link" href="#">Read more</a>
-                        </div>
-                    </div>
-                </div>
-                <!-- статья -->
-                <div class="article article article_size_big">
-                    <div class="article__header article__header_violet">
-                        <span class="article__title">SOME WORDS OUR CEO</span>
-                    </div>
-                    <div class="article__main">
-                        <div class="article__img-wrapper">
-                            <img class="article__img" src="https://vk.vkfaces.com/637620/v637620001/4aa12/djOJ8qiNwlE.jpg" />
-                        </div>
-                        <div class="description article__description">
-                            <p class="description__text">
-                                Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-                                when an unknown printer took a galley of type and scrambled it to make a type
-                                specimen book.
-                            </p>
-                            <span class="description__badge">Steve Jobs, CEO</span>
-                        </div>
-                    </div>
-                </div>
+                <!-- здесь будут располагаться сгенерированные статьи (шаблон в нижней части страницы - script tag) -->
                 <!--далее следуют три статьи меньшего размера (article_size_small) вторая из которых содержит три подстатьи -->
                 <div class="article article_size_small">
                     <!-- заголовок статьи -->
@@ -266,5 +181,23 @@
             <p class="footer__label">Copyright &copy; Lodoss team 2018</p>
         </div>
     </div>
+    <script id='tmp' type="x-tmpl-mustache">
+        <div class="article article_size_big">
+            <div class="article__header {{color}}">
+                <span class="article__title">{{header}}</span>
+            </div>
+            <div class="article__main">
+                <div class="article__img-wrapper">
+                    <img class="article__img" src="{{src}}" />
+                </div>
+                <div class="description article__description">
+                    <p class="description__text">
+                        {{text}}
+                    </p>
+                    <a class="description__link" href="#">Read more</a>
+                </div>
+            </div>
+        </div>
+    </script>
 <script type="text/javascript" src="bundle.js"></script></body>
 </html>  
