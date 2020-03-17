@@ -17,8 +17,15 @@ const makeArticles = async (url, options) => {
       fullUrl = fullUrl.replace('&', '');
     }
   }
-  const responseTexts = await fetch(fullUrl);
-  const texts = await responseTexts.json();
+  let texts;
+  let responseTexts;
+  try {
+    responseTexts = await fetch(fullUrl);
+    texts = await responseTexts.json();
+  } catch (error) {
+    // eslint-disable-next-line no-alert
+    alert(error);
+  }
   const tmp = document.getElementById('tmp').innerHTML;
   const main = document.getElementsByClassName('page-main')[0];
   let html = '';
