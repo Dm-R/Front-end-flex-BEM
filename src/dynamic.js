@@ -29,6 +29,9 @@ const getData = (url, params) => {
         }
       }
     };
+    request.onerror = () => {
+      rej(new Error('Network Error'));
+    };
     request.send();
   });
 };
@@ -43,12 +46,13 @@ request.then((response) => {
   const tmp = document.getElementById('tmp').innerHTML;
   const main = document.getElementsByClassName('page-main')[0];
   let html = '';
+  const texts = JSON.parse(response);
   const view = {};
   for (let i = 0; i < data.paras; i += 1) {
     view.src = `https://picsum.photos/200?random=${i}`;
     view.color = i % 2 === 0 ? 'article__header_violet' : 'article__header_yellow';
     view.header = i % 2 === 0 ? 'ABOUT SUPER LOGO' : 'SOME WORDS OUR CEO';
-    view.text = JSON.parse(response)[i];
+    view.text = texts[i];
     html += Mustache.render(tmp, view);
   }
   main.innerHTML = html + main.innerHTML;
