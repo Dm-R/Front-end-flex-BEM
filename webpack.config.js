@@ -5,7 +5,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
   mode: 'development',
-  entry: './src/index.js',
+  entry: ['babel-polyfill', './src/index.js'],
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist'),
@@ -19,6 +19,7 @@ module.exports = {
           loader: 'babel-loader',
           options: {
             presets: ['@babel/preset-env'],
+            plugins: ['transform-regenerator'],
           },
         },
       },

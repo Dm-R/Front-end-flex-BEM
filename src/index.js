@@ -4,6 +4,7 @@ import './scss/fragments/page.scss';
 import './scss/fragments/article.scss';
 import './scss/fragments/slider.scss';
 import './dynamic';
+import 'babel-polyfill';
 
 // Воспользуемся замыканием, чтобы всегда иметь доступ к номеру текущего слайда
 // код вне функции не сможет ее переопределить
